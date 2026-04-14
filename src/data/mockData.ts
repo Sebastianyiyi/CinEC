@@ -151,3 +151,22 @@ export const snackCombos: SnackCombo[] = [
     image: "https://images.unsplash.com/photo-1635805737707-575885ab0820?w=400&h=300&fit=crop",
   },
 ];
+export const generateSeats = (): Seat[] => {
+  const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+  const seatsPerRow = 12;
+  const seats: Seat[] = [];
+
+  rows.forEach(row => {
+    for (let i = 1; i <= seatsPerRow; i++) {
+      const random = Math.random();
+      seats.push({
+        id: `${row}${i}`,
+        row,
+        number: i,
+        status: random < 0.3 ? 'occupied' : 'available',
+      });
+    }
+  });
+
+  return seats;
+};
