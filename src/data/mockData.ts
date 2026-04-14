@@ -98,3 +98,30 @@ export const movies: Movie[] = [
     showtimes: [],
   },
 ];
+
+export const promotions: Promotion[] = [
+  {
+    id: "p1",
+    title: "Lunes de Película",
+    description: "Inicia la semana con 2x1 en entradas 2D y 3D en todas nuestras salas.",
+    discount: "2x1",
+    validUntil: "2026-12-31",
+    image: "https://images.unsplash.com/photo-1485686531765-a80556285812?w=800&h=400&fit=crop",
+  },
+  {
+    id: "p2",
+    title: "Combo Familiar",
+    description: "4 Entradas + 2 Popcorn grandes + 4 Bebidas por un precio increíble.",
+    discount: "30% OFF",
+    validUntil: "2026-08-31",
+    image: "https://images.unsplash.com/photo-1572115606524-204961f6236b?w=800&h=400&fit=crop",
+  },
+  {
+    id: "p3",
+    title: "Descuento Estudiantes",
+    description: "Presenta tu carnet estudiantil universitario y obtén descuento en tu entrada.",
+    discount: "20% OFF",
+    validUntil: "2026-12-31",
+    image: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800&h=400&fit=crop",
+  }
+];
