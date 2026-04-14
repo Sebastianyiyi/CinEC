@@ -10,6 +10,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <Routes>
+        {/* Rutas principales de la aplicación */}
         <Route path="/" element={<Index />} />
         <Route path="/estrenos" element={<Estrenos />} />
         <Route path="*" element={<NotFound />} />
