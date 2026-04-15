@@ -172,7 +172,7 @@ const Booking = () => {
                   </div>
                 </div>
                 <Button onClick={() => setStep("ticket")} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                  <Ticket className="mr-1 h-4 w-4" /> Confirmar Compra (Simulado)
+                  <Ticket className="mr-1 h-4 w-4" /> Confirmar Compra
                 </Button>
               </div>
             )}

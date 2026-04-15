@@ -46,15 +46,15 @@ export default function MovieDetail() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
         </div>
         
-        <div className="container relative h-full mx-auto px-4 flex flex-col justify-end pb-12">
           <Button 
             variant="ghost" 
-            className="w-fit mb-6 text-white hover:text-gray-200 hover:bg-white/10"
+            className="absolute top-6 left-4 text-white bg-black/30 backdrop-blur-md hover:bg-black/40 z-20"
             onClick={() => navigate(-1)}
           >
             <ChevronLeft className="w-4 h-4 mr-2" />
             Volver
           </Button>
+        <div className="container relative h-full mx-auto px-4 flex flex-col justify-end pb-12">
           
           <div className="flex flex-col md:flex-row gap-8 items-end md:items-center">
             <img
