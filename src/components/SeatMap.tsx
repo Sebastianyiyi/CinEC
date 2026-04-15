@@ -33,7 +33,7 @@ const SeatMap = ({ onSelectionChange }: SeatMapProps) => {
     <div className="space-y-6">
       {/* Screen */}
       <div className="mx-auto w-3/4 text-center">
-        <div className="h-2 rounded-full bg-accent/60 mb-2" />
+        <div className="h-2 rounded-full bg-primary/60 mb-2" />
         <span className="text-xs text-muted-foreground uppercase tracking-widest">Pantalla</span>
       </div>
 
@@ -50,9 +50,9 @@ const SeatMap = ({ onSelectionChange }: SeatMapProps) => {
                   disabled={seat.status === 'occupied'}
                   className={cn(
                     "h-7 w-7 rounded-t-md text-[10px] font-medium transition-all",
-                    seat.status === 'available' && "bg-muted hover:bg-accent/40 text-muted-foreground",
+                    seat.status === 'available' && "bg-muted hover:bg-primary/40 text-muted-foreground",
                     seat.status === 'occupied' && "bg-primary/20 cursor-not-allowed text-primary/30",
-                    seat.status === 'selected' && "bg-accent text-accent-foreground scale-105",
+                    seat.status === 'selected' && "bg-primary text-primary-foreground scale-105",
                     i === 5 && "mr-4", // aisle
                   )}
                 >
@@ -72,7 +72,7 @@ const SeatMap = ({ onSelectionChange }: SeatMapProps) => {
           Disponible
         </div>
         <div className="flex items-center gap-1.5">
-          <div className="h-4 w-4 rounded-t-md bg-accent" />
+          <div className="h-4 w-4 rounded-t-md bg-primary" />
           Seleccionado
         </div>
         <div className="flex items-center gap-1.5">

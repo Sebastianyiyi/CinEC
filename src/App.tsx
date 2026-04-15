@@ -11,6 +11,8 @@ import Snacks from "./pages/Snacks";
 import Estrenos from "./pages/Estrenos";
 import Promociones from "./pages/Promociones";
 import NotFound from "./pages/NotFound";
+import Cartelera from "./pages/Cartelera";
+import MovieDetail from "./pages/MovieDetail";
 
 const queryClient = new QueryClient();
 

@@ -20,9 +20,9 @@ const Header = () => {
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2">
-          <Film className="h-7 w-7 text-accent" />
+          <Film className="h-7 w-7 text-primary" />
           <span className="font-display text-2xl font-bold tracking-tight">
-            Cin<span className="text-accent">EC</span>
+            Cin<span className="text-primary">EC</span>
           </span>
         </Link>
 
