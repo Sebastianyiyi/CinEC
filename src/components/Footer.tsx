@@ -35,9 +35,9 @@ const Footer = () => (
             <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> info@cinec.com </li>
           </ul>
         </div>
-        <div className="mt-8 border-t border-primary-foreground/10 pt-6 text-center text-xs text-primary-foreground/50">
-          © 2026 CinEC. Todos los derechos reservados.
-        </div>
+      </div>
+      <div className="mt-8 border-t border-primary-foreground/10 pt-6 text-center text-xs text-primary-foreground/50">
+        © 2026 CinEC. Todos los derechos reservados.
       </div>
     </div>
   </footer>
