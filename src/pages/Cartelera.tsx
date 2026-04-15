@@ -29,6 +29,7 @@ const Cartelera = () => {
             variant={genre === null ? "default" : "outline"}
             size="sm"
             onClick={() => setGenre(null)}
+            className={genre === null ? "bg-primary text-primary-foreground hover:bg-primary/90" : ""}
           >
             Todas
           </Button>
@@ -38,6 +39,7 @@ const Cartelera = () => {
               variant={genre === g ? "default" : "outline"}
               size="sm"
               onClick={() => setGenre(g)}
+              className={genre === g ? "bg-primary text-primary-foreground hover:bg-primary/90" : ""}
             >
               {g}
             </Button>
