@@ -97,6 +97,25 @@ export default function MovieDetail() {
           </div>
         </div>
       </div>
+      
+      {/* Trailer Section */}
+      {movie.trailerUrl && (
+        <div className="container mx-auto px-4 py-12">
+          <h2 className="text-2xl font-bold mb-6">
+            Tráiler Oficial
+          </h2>
+
+          <div className="w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              className="w-full h-full"
+              src={movie.trailerUrl}
+              title={`Trailer de ${movie.title}`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
 
       {/* Showtimes Section */}
       <div className="container mx-auto px-4 py-12">
