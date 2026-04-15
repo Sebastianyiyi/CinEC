@@ -46,15 +46,15 @@ export default function MovieDetail() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
         </div>
         
-        <div className="container relative h-full mx-auto px-4 flex flex-col justify-end pb-12">
           <Button 
             variant="ghost" 
-            className="w-fit mb-6 text-white hover:text-gray-200 hover:bg-white/10"
+            className="absolute top-6 left-4 text-white bg-black/30 backdrop-blur-md hover:bg-black/40 z-20"
             onClick={() => navigate(-1)}
           >
             <ChevronLeft className="w-4 h-4 mr-2" />
             Volver
           </Button>
+        <div className="container relative h-full mx-auto px-4 flex flex-col justify-end pb-12">
           
           <div className="flex flex-col md:flex-row gap-8 items-end md:items-center">
             <img
@@ -97,6 +97,25 @@ export default function MovieDetail() {
           </div>
         </div>
       </div>
+      
+      {/* Trailer Section */}
+      {movie.trailerUrl && (
+        <div className="container mx-auto px-4 py-12">
+          <h2 className="text-2xl font-bold mb-6">
+            Tráiler Oficial
+          </h2>
+
+          <div className="w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              className="w-full h-full"
+              src={movie.trailerUrl}
+              title={`Trailer de ${movie.title}`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
 
       {/* Showtimes Section */}
       <div className="container mx-auto px-4 py-12">
@@ -135,7 +154,7 @@ export default function MovieDetail() {
                     </div>
                     <Button 
                       className="w-full font-semibold" 
-                      onClick={() => navigate(`/reserva/${show.id}`)}
+                      onClick={() => navigate(`/comprar/${movie.id}/${show.id}`)}
                     >
                       Reservar Asientos
                     </Button>
