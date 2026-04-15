@@ -126,6 +126,65 @@ const Booking = () => {
                 </div>
               </div>
             )}
+
+            {step === "checkout" && (
+              <div className="space-y-6 max-w-md mx-auto">
+                <h2 className="font-display text-xl font-semibold">Resumen de compra</h2>
+                <div className="rounded-lg border border-border p-6 space-y-4">
+                  <div>
+                    <h3 className="font-semibold">{movie.title}</h3>
+                    <p className="text-sm text-muted-foreground">{showtime.time} · {showtime.room}</p>
+                  </div>
+                  <div className="border-t border-border pt-3 space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span>Entradas ({selectedSeats.length}x ${showtime.price.toFixed(2)})</span>
+                      <span>${seatsTotal.toFixed(2)}</span>
+                    </div>
+                    <div className="text-xs text-muted-foreground">Asientos: {selectedSeats.map(s => s.id).join(", ")}</div>
+                    {Array.from(snackCart.entries()).map(([id, qty]) => {
+                      const combo = snackCombos.find(c => c.id === id)!;
+                      return (
+                        <div key={id} className="flex justify-between">
+                          <span>{combo.name} x{qty}</span>
+                          <span>${(combo.price * qty).toFixed(2)}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div className="flex gap-2">
+                    <Input placeholder="Código de cupón" value={coupon} onChange={e => setCoupon(e.target.value)} className="flex-1" />
+                    <Button variant="outline" size="sm">Aplicar</Button>
+                  </div>
+                  <div className="border-t border-border pt-3 flex justify-between font-display text-xl font-bold">
+                    <span>Total</span>
+                    <span className="text-accent">${total.toFixed(2)}</span>
+                  </div>
+                </div>
+                <Button onClick={() => setStep("ticket")} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                  <Ticket className="mr-1 h-4 w-4" /> Confirmar Compra (Simulado)
+                </Button>
+              </div>
+            )}
+
+            {step === "ticket" && (
+              <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="max-w-sm mx-auto text-center space-y-6">
+                <div className="rounded-xl border-2 border-dashed border-accent p-8 space-y-4 bg-card">
+                  <h2 className="font-display text-2xl font-bold text-accent">¡Compra Exitosa!</h2>
+                  <div className="flex justify-center">
+                    <QRCodeSVG value={`cinec://ticket/${ticketId}`} size={160} level="H" />
+                  </div>
+                  <div className="space-y-1">
+                    <p className="font-display text-lg font-semibold">{movie.title}</p>
+                    <p className="text-sm text-muted-foreground">{showtime.time} · {showtime.room}</p>
+                    <p className="text-sm text-muted-foreground">Asientos: {selectedSeats.map(s => s.id).join(", ")}</p>
+                    <p className="text-xs font-mono text-muted-foreground mt-2">ID: {ticketId}</p>
+                  </div>
+                  <p className="font-display text-xl font-bold text-accent">${total.toFixed(2)}</p>
+                </div>
+                <p className="text-sm text-muted-foreground">Presenta este código QR en la entrada del cine</p>
+                <Button onClick={() => navigate("/")} variant="outline">Volver al Inicio</Button>
+              </motion.div>
+            )}
             </motion.div>
         </AnimatePresence>
       </div>
