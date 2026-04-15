@@ -16,7 +16,7 @@ const Index = () => (
       <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/60 to-transparent" />
       <div className="container relative mx-auto flex h-full items-center px-4">
         <div className="max-w-lg space-y-5">
-          <span className="inline-block bg-accent text-accent-foreground text-xs font-semibold px-3 py-1 rounded-full">
+          <span className="inline-block bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
             {featured.genre[0]}
           </span>
           <h1 className="text-5xl font-bold leading-tight text-primary-foreground md:text-6xl">
@@ -27,7 +27,7 @@ const Index = () => (
           </p>
           <Link
             to={`/pelicula/${featured.id}`}
-            className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-lg hover:bg-accent/90 transition-colors"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
           >
             <Ticket className="h-4 w-4" /> Comprar Entrada
           </Link>
@@ -42,7 +42,7 @@ const Index = () => (
           <h2 className="text-3xl font-bold">En Cartelera</h2>
           <p className="text-muted-foreground mt-1">Películas disponibles ahora</p>
         </div>
-        <Link to="/cartelera" className="flex items-center gap-1 text-sm text-accent hover:underline">
+        <Link to="/cartelera" className="flex items-center gap-1 text-sm text-primary hover:underline">
           Ver todas <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
@@ -65,7 +65,7 @@ const Index = () => (
                 <div>
                   <h3 className="font-semibold text-lg">{movie.title}</h3>
                   <p className="text-xs text-muted-foreground">{movie.genre.join(" · ")}</p>
-                  <p className="text-sm text-accent mt-2">Estreno: {movie.releaseDate}</p>
+                  <p className="text-sm text-primary mt-2">Estreno: {movie.releaseDate}</p>
                 </div>
               </div>
             ))}

@@ -7,12 +7,13 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-10">
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div>
-            <Link to="/" className="flex items-center gap-2 mb-3">
-              <Film className="h-6 w-6 text-accent" />
-              <span className="font-display text-xl font-bold">
-                Cin<span className="text-accent">EC</span>
+            <div className="flex items-center gap-2 mb-4">
+              <Film className="h-6 w-6 text-primary" />
+              <span className="font-display text-xl font-bold tracking-tight">
+                Cin<span className="text-primary">EC</span>
               </span>
-            </Link>
+            </div>
+
             <p className="text-sm text-muted-foreground max-w-xs">
               Tu cine favorito. Compra tus entradas en línea y disfruta la mejor experiencia.
             </p>

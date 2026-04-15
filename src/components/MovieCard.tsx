@@ -12,7 +12,7 @@ const MovieCard = ({ movie }: { movie: Movie }) => (
         loading="lazy"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-      <span className="absolute top-2 right-2 bg-accent text-accent-foreground text-xs font-semibold px-2 py-1 rounded">
+      <span className="absolute top-2 right-2 bg-primary text-primary-foreground text-xs font-semibold px-2 py-1 rounded">
         {movie.rating}
       </span>
     </div>

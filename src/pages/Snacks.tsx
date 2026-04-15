@@ -1,7 +1,8 @@
+import Layout from "@/components/Layout";
 import { snackCombos } from "@/data/mockData";
 
 const Snacks = () => (
-  <div className="min-h-screen bg-background">
+  <Layout>
     <section className="container mx-auto px-4 py-12">
       <h1 className="text-4xl font-bold mb-2">Snacks & Combos</h1>
       <p className="text-muted-foreground mb-8">Complementa tu experiencia cinematográfica</p>
@@ -28,7 +29,7 @@ const Snacks = () => (
         ))}
       </div>
     </section>
-  </div>
+  </Layout>
 );
 
 export default Snacks;

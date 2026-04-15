@@ -1,3 +1,4 @@
+import Layout from "@/components/Layout";
 import { promotions } from "@/data/mockData";
 
 const Promociones = () => {
@@ -7,7 +8,7 @@ const Promociones = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <Layout>
       <section className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold mb-2">Promociones</h1>
         <p className="text-muted-foreground mb-8">Aprovecha nuestras ofertas especiales</p>
@@ -42,7 +43,7 @@ const Promociones = () => {
           ))}
         </div>
       </section>
-    </div>
+    </Layout>
   );
 };
 

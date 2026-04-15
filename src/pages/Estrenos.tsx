@@ -1,7 +1,8 @@
+import Layout from "@/components/Layout";
 import { movies } from "@/data/mockData";
 
 const Estrenos = () => (
-  <div className="min-h-screen bg-background">
+  <Layout>
     <section className="container mx-auto px-4 py-12">
       <h1 className="text-4xl font-bold mb-2">Próximos Estrenos</h1>
       <p className="text-muted-foreground mb-8">Las películas que llegarán pronto a CinEC</p>
@@ -35,7 +36,7 @@ const Estrenos = () => (
         ))}
       </div>
     </section>
-  </div>
+  </Layout>
 );
 
 export default Estrenos;
