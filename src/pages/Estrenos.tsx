@@ -1,56 +1,41 @@
-import { Link } from "react-router-dom";
-import Layout from "@/components/Layout";
-import CountdownTimer from "@/components/CountdownTimer";
 import { movies } from "@/data/mockData";
 
-const upcoming = movies.filter(m => m.isUpcoming);
-
 const Estrenos = () => (
-  <Layout>
-    <div className="container mx-auto px-4 py-12">
-      <div className="mb-10">
-        <h1 className="text-4xl font-bold">Próximos Estrenos</h1>
-        <p className="text-muted-foreground mt-2">No te pierdas las películas que vienen</p>
-      </div>
-
-      {upcoming.length === 0 ? (
-        <p className="text-muted-foreground text-center py-20">
-          No hay estrenos próximos por el momento.
-        </p>
-      ) : (
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {upcoming.map(movie => (
-            <Link
-              key={movie.id}
-              to={`/pelicula/${movie.id}`}
-              className="group block rounded-xl overflow-hidden border border-border bg-card shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="relative h-56 overflow-hidden">
-                <img
-                  src={movie.backdrop}
-                  alt={movie.title}
-                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent" />
-                <span className="absolute top-3 right-3 bg-accent text-accent-foreground text-xs font-semibold px-2 py-1 rounded">
-                  {movie.rating}
-                </span>
+  <div className="min-h-screen bg-background">
+    <section className="container mx-auto px-4 py-12">
+      <h1 className="text-4xl font-bold mb-2">Próximos Estrenos</h1>
+      <p className="text-muted-foreground mb-8">Las películas que llegarán pronto a CinEC</p>
+      <div className="space-y-6">
+        {movies.filter(m => m.isUpcoming).map(movie => (
+          <div key={movie.id} className="flex flex-col md:flex-row gap-6 rounded-xl border bg-card p-6 shadow-sm">
+            <img src={movie.poster} alt={movie.title} className="w-full md:w-40 h-56 rounded-lg object-cover" />
+            <div className="flex-1 space-y-3">
+              <div className="flex flex-wrap gap-2">
+                {movie.genre.map(g => (
+                  <span key={g} className="px-2 py-1 text-xs bg-secondary text-secondary-foreground rounded-full">
+                    {g}
+                  </span>
+                ))}
               </div>
-              <div className="p-5 space-y-3">
-                <h2 className="text-xl font-bold">{movie.title}</h2>
-                <p className="text-xs text-muted-foreground">{movie.genre.join(" · ")}</p>
-                <p className="text-sm text-muted-foreground line-clamp-2">{movie.synopsis}</p>
-                <div className="pt-2">
-                  <p className="text-xs text-muted-foreground mb-2">Estreno en:</p>
-                  <CountdownTimer targetDate={movie.releaseDate} />
+              <h2 className="text-2xl font-bold">{movie.title}</h2>
+              <p className="text-muted-foreground leading-relaxed">{movie.synopsis}</p>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-2">
+                <div className="text-sm font-medium p-2 bg-primary/10 text-primary rounded border border-primary/20">
+                  📅 Estreno: {movie.releaseDate}
                 </div>
+                <button
+                  onClick={() => alert(`Te notificaremos para ${movie.title}`)}
+                  className="px-4 py-2 border border-primary text-primary rounded-md hover:bg-primary/10 transition-colors text-sm font-medium"
+                >
+                  🔔 Notificarme
+                </button>
               </div>
-            </Link>
-          ))}
-        </div>
-      )}
-    </div>
-  </Layout>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
 );
 
 export default Estrenos;
