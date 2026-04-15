@@ -29,5 +29,32 @@ coverage
 # OS
 Thumbs.db
 
-#Ignorar duplicación del proyecto
+# Ignorar duplicación del proyecto
 cine-ticket-hub-main/
+
+# Consulta de archivos en gitignore
+1. Node.js / npm
+
+Carpeta a ignorar: node_modules/
+
+Justificación:
+Esta carpeta contiene todas las dependencias del proyecto instaladas mediante npm. Puede llegar a ocupar cientos de megabytes y no es 
+necesario subirla al repositorio, ya que cualquier desarrollador puede instalar las dependencias ejecutando: npm install
+
+2. Vite / herramientas de build
+
+Carpeta a ignorar: dist/
+
+Justificación:
+Esta carpeta contiene los archivos generados al construir el proyecto para producción (build). 
+Estos archivos son generados automáticamente por la herramienta de build y pueden regenerarse en cualquier momento usando: npm run build
+
+3. TypeScript
+
+Archivo a ignorar: *.tsbuildinfo
+
+Justificación:
+Este archivo es generado automáticamente por TypeScript cuando se usa compilación incremental. 
+Solo contiene información temporal para acelerar futuras compilaciones y no es necesario para ejecutar el proyecto.
+
+
