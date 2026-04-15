@@ -38,7 +38,7 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
 
   if (timeLeft.isExpired) {
     return (
-      <div className="inline-flex items-center px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-bold uppercase tracking-wider animate-pulse">
+      <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider animate-pulse">
         ¡Ya disponible!
       </div>
     );
@@ -60,7 +60,7 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
           key={block.label} 
           className="flex flex-col items-center min-w-[3rem] p-1.5 rounded-lg bg-muted/50 border border-border/50 shadow-sm"
         >
-          <span className="text-lg font-mono font-bold text-accent tabular-nums leading-none">
+          <span className="text-lg font-mono font-bold text-primary tabular-nums leading-none">
             {block.value}
           </span>
           <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-tight mt-1">
