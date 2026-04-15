@@ -12,8 +12,7 @@ export default function MovieDetail() {
   const navigate = useNavigate();
   const movie = movies.find((m) => m.id === id);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [selectedDate, _setSelectedDate] = useState<string>("2026-04-15"); // Simulando fecha por defecto
+  const [selectedDate] = useState<string>("2026-04-15"); // Simulando fecha por defecto
 
   const showtimes = useMemo(() => {
     if (!movie || !movie.showtimes) return [];
@@ -43,13 +42,14 @@ export default function MovieDetail() {
             alt={movie.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
+          {/* Overlay oscuro garantizado sin importar el tema (light/dark mode) */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
         </div>
         
         <div className="container relative h-full mx-auto px-4 flex flex-col justify-end pb-12">
           <Button 
             variant="ghost" 
-            className="w-fit mb-6 text-muted-foreground hover:text-foreground"
+            className="w-fit mb-6 text-white hover:text-gray-200 hover:bg-white/10"
             onClick={() => navigate(-1)}
           >
             <ChevronLeft className="w-4 h-4 mr-2" />
@@ -98,7 +98,7 @@ export default function MovieDetail() {
       <div className="container mx-auto px-4 py-12">
         <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
           <Ticket className="w-6 h-6" />
-          Horarios Disponibles
+          Horarios para el {selectedDate}
         </h2>
 
         {movie.isUpcoming ? (
