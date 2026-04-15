@@ -135,7 +135,7 @@ export default function MovieDetail() {
                     </div>
                     <Button 
                       className="w-full font-semibold" 
-                      onClick={() => navigate(`/reserva/${show.id}`)}
+                      onClick={() => navigate(`/comprar/${movie.id}/${show.id}`)}
                     >
                       Reservar Asientos
                     </Button>
