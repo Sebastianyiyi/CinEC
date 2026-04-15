@@ -64,10 +64,14 @@ export default function MovieDetail() {
             />
             
             <div className="space-y-4 max-w-2xl">
-              <div className="flex flex-wrap items-center gap-2">
-                <Badge variant="secondary">{movie.rating}</Badge>
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <Badge variant="secondary" className="bg-white text-black font-bold">
+                  {movie.rating}
+                </Badge>
                 {movie.genre.map((g) => (
-                  <Badge key={g} variant="outline">{g}</Badge>
+                  <Badge key={g} variant="outline" className="text-white border-white/50 backdrop-blur-md bg-black/20">
+                    {g}
+                  </Badge>
                 ))}
               </div>
               
