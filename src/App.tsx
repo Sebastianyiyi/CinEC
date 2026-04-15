@@ -4,6 +4,7 @@ import Index from "./pages/Index";
 import Estrenos from "./pages/Estrenos";
 import Snacks from "./pages/Snacks";
 import NotFound from "./pages/NotFound";
+import Promociones from "./pages/Promociones";
 import Cartelera from "./pages/Cartelera";
 
 const queryClient = new QueryClient();
@@ -14,6 +15,7 @@ const App = () => (
       <Routes>
         {/* Rutas principales de la aplicación */}
         <Route path="/" element={<Index />} />
+        <Route path="/promociones" element={<Promociones />} />
         <Route path="/estrenos" element={<Estrenos />} />
         <Route path="/cartelera" element={<Cartelera />} />
         <Route path="/snacks" element={<Snacks />} />
